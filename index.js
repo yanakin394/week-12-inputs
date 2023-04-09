@@ -3,5 +3,6 @@ console.log(nameInput);// проверка
 
 let nameInputCorrection = () => { // функция для удаления пробелов по сторонам
     return nameInput.trim();
+    nameInput[0].toUpperCase();
 }
 console.log(nameInputCorrection);// проверка
