@@ -4,15 +4,17 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Comment</title>
+    <title>Chat</title>
     <link rel="stylesheet" href="index.css">
 </head>
-<body>
-    
+<body>    
     <div class="page_wrapper">
         <div class="chat_wrapper">
             <p class="chat_title">Chat</p>
             <div class="chat">
+                <div class="avatar"></div>
+                <div class="username"></div>
+                <div class="message"></div>
             </div>
         </div>
         <div class="input_wrapper">
@@ -21,15 +23,15 @@
                 <label for="name_input">Your name:</label>
                 <input type="text" name="Name" id="name_input" size="30">
             </form>
-            <form action="">
-                <label for="name_input">Enter link for your avatar</label>
+                <label for="name_input">Enter link for your avatar</label>           
+            <form action="">     
                 <input type="url" name="Link" id="link_input" size="30">
             </form>
-            <form action="">
-                <textarea name="message" id="msg_input" cols="30" rows="10" placeholder="Your comment..."></textarea>            
+            <form action="">  
+                <textarea name="message" id="msg_input" cols="30" rows="10" placeholder="Your comment..."></textarea>          
             </form>
-        <button type="submit" class="button">SUBMIT</button>
-    </div>
+            <button type="submit" class="button">SUBMIT</button>
+        </div>
     </div>
     <script src="index.js"></script>
 </body>

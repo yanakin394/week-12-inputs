@@ -10,7 +10,10 @@
 .input_title {
     font-size: 35px;
 }
-
+.avatar {
+    max-width: 30px;
+    max-height: 30px;
+}
 .input_wrapper {
     width: 50%;
     display: flex;
