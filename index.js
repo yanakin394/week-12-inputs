@@ -9,12 +9,14 @@ click.addEventListener('click', () => {
     let avatar = document.getElementById('link_input').value;
     
     let userNameChecked = userName.trim(); // проверяем на пробелы
+
     //функция проверки на спам НЕ РАБОТАЕТ
     let commentChecked = () => {
         let checkSpam = comment.replace(/viagra/gi, "***").replace(/xxx/gi, "***");
-        console.log(checkSpam);
+        return checkSpam;
     } 
+    
     document.querySelector('.avatar').innerHTML = avatar; // функция для вывода аватара в чат ПОКА НЕ РАБОТАЕТ
     document.querySelector('.username').innerText = userNameChecked; // функция для вывода проверенного юзернейма в чат
-    document.querySelector('.message').innerText = commentChecked; // функция для вывода  сообщения в чат
+    document.querySelector('.message').innerText = commentChecked(); // функция для вывода  сообщения в чат
 })
