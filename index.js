@@ -8,9 +8,11 @@ click.addEventListener('click', () => {
     let comment = document.getElementById('msg_input').value;
     let avatar = document.getElementById('link_input').value;
     
-    let userNameChecked = userName.trim(); // проверяем на пробелы
+    let userNameLowerRegister = userName.toLowerCase(); // исправляем все буквы юзернейма в нижний регистр
+    let userNameFirstLetter = userNameLowerRegister[0].toUpperCase() +  userNameLowerRegister.slice(1); // делаем первый символ заглавной буквой
+    let userNameChecked = userNameFirstLetter.trim(); // проверяем на пробелы
 
-    //функция проверки на спам НЕ РАБОТАЕТ
+    //функция проверки на спам
     let commentChecked = () => {
         let checkSpam = comment.replace(/viagra/gi, "***").replace(/xxx/gi, "***");
         return checkSpam;
