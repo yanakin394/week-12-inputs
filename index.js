@@ -18,7 +18,7 @@ click.addEventListener('click', () => {
         return checkSpam;
     } 
     
-    document.querySelector('.avatar').innerHTML = `<img src="${avatar}">`; // функция для вывода аватара в чат ПОКА НЕ РАБОТАЕТ
+    document.querySelector('.avatar').innerHTML = `<img src="${avatar}" width="80">`; // функция для вывода аватара в чат ПОКА НЕ РАБОТАЕТ
     document.querySelector('.username').innerText = userNameChecked; // функция для вывода проверенного юзернейма в чат
     document.querySelector('.message').innerText = commentChecked(); // функция для вывода  сообщения в чат
 })

@@ -3,6 +3,10 @@
     flex-direction: row-reverse;
 }
 
+.chat{
+    display: flex;
+    flex-direction: column;
+}
 .chat_wrapper {
     width: 50%;
 }
@@ -10,10 +14,10 @@
 .input_title {
     font-size: 35px;
 }
-.avatar {
-    max-width: 30px;
-    max-height: 30px;
-}
+/* .avatar {
+    width: 1px;    
+    height: 1px;
+} */
 .input_wrapper {
     width: 50%;
     display: flex;
