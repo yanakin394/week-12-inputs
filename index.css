@@ -23,6 +23,9 @@
     flex-direction: row;
     align-items: flex-end;
 }
+.date {
+    margin-left: 20%;
+}
 .username {
     padding-left: 2%;
 }

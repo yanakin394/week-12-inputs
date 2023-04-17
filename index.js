@@ -1,9 +1,17 @@
 // берем данные кнопки
 const click = document.querySelector('.button'); 
 
+
+
+
 // создаем обработчик событий
 click.addEventListener('click', () => {
-    //задаю переменные для полученных значений после ввода юзером
+/*     const checkedNoBox = getElementById('checkbox_no');
+    checkedNoBox.addEventListener('checked', () => {
+        document.querySelector('.username').innerText = 'username';
+    }) */
+
+        //задаю переменные для полученных значений после ввода юзером
     let userName = document.getElementById('name_input').value; 
     let comment = document.getElementById('msg_input').value;
     let avatar = document.getElementById('link_input').value;
@@ -16,26 +24,23 @@ click.addEventListener('click', () => {
     let commentChecked = () => {
         let checkSpam = comment.replace(/viagra/gi, "***").replace(/xxx/gi, "***");
         return checkSpam;
-    } 
-    
+    }     
     document.querySelector('.avatar').innerHTML = `<img src="${avatar}" width="60" height="60">`; // функция для вывода аватара в чат
     document.querySelector('.username').innerText = userNameChecked; // функция для вывода проверенного юзернейма в чат
-    document.querySelector('.message').innerText = commentChecked(); // функция для вывода  сообщения в чат
-})
+    document.querySelector('.message').innerText = commentChecked(); // функция для вывода  сообщения в чат    
 
-//Неделя 13
-
-const checkboxNo = document.getElementById('checkbox_no'); // привязываю отрицательное значение чекбокса к переменной
-function showUsername() {
-    if (checkboxNo.value === 'No') {                          // задаю функцию, при которой, если отмечен чекбокс No, имя пользователя не будет показываться 
-    document.querySelector('.username').innerText = 'username';
+    const messageDate = () => {                                      // пишу функцию для вывода даты
+        let date = new Date();                                      // задаю костанту для даты
+        let actualDate = date.toUTCString();                                    
+        document.querySelector('.date').innerText = actualDate;              
     }
+    messageDate();
 }
-showUsername();
+)
 
-const messageDate = () => {                                      // пишу функцию для вывода даты
-    let d = new Date();                                         // задаю костанту для даты
-    document.querySelector('.date').innerText = d;              // 
-}
 
-console.log(messageDate);
+/*     const checkboxNo = document.getElementById('checkbox_no'); // привязываю отрицательное значение чекбокса к переменной
+    function showUsername() {
+        if (checkboxNo.checked) {                          // задаю функцию, при которой, если отмечен чекбокс No, имя пользователя не будет показываться 
+            document.querySelector('.username').innerText = 'username';
+        }} */
