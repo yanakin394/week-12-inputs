@@ -18,6 +18,17 @@
 .chat_wrapper {
     width: 50%;
 }
+.user_wrapper{
+    display: flex;
+    flex-direction: row;
+    align-items: flex-end;
+}
+.username {
+    padding-left: 2%;
+}
+.message {
+    padding-top: 3%;
+}
 .chat_title,
 .input_title {
     font-size: 35px;

@@ -23,11 +23,19 @@ click.addEventListener('click', () => {
     document.querySelector('.message').innerText = commentChecked(); // функция для вывода  сообщения в чат
 })
 
-const checkboxNo = document.getElementById('checkbox_no'); // привязываю отрицательное значение чекбокса к переменной
+//Неделя 13
 
+const checkboxNo = document.getElementById('checkbox_no'); // привязываю отрицательное значение чекбокса к переменной
 function showUsername() {
     if (checkboxNo.value === 'No') {                          // задаю функцию, при которой, если отмечен чекбокс No, имя пользователя не будет показываться 
     document.querySelector('.username').innerText = 'username';
     }
 }
 showUsername();
+
+const messageDate = () => {                                      // пишу функцию для вывода даты
+    let d = new Date();                                         // задаю костанту для даты
+    document.querySelector('.date').innerText = d;              // 
+}
+
+console.log(messageDate);
