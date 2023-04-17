@@ -19,16 +19,27 @@
         </div>
         <div class="input_wrapper">
             <p class="input_title">Leave your comment</p>
-            <form action="">
+            <div class="checkbox_wrapper">
+                <p>Show my name.</p>
+                <form class="checkbox_form">
+                    <label>Yes
+                        <input type="radio" name="checkbox_answer" id="checkbox_yes" value="Yes">
+                    </label>
+                    <label>No
+                        <input type="radio" name="checkbox_answer" id="checkbox_no" value="No">
+                    </label>
+                </form>
+            </div>
+            <form>
                 <label for="name_input">Your name:</label>
                 <input type="text" name="Name" id="name_input" size="30">
-            </form>
-                <label for="name_input">Enter link for your avatar</label>           
-            <form action="">     
+            </form>                    
+            <form>  
+                <label for="link_input">Enter link for your avatar</label>      
                 <input type="url" name="Link" id="link_input" size="30">
             </form>
-            <form action="">  
-                <textarea name="message" id="msg_input" cols="30" rows="10" placeholder="Your comment..."></textarea>          
+            <form>  
+                <textarea name="message" id="msg_input" cols="48" rows="10" placeholder="Your comment..."></textarea>          
             </form>
             <button type="submit" class="button">SUBMIT</button>
         </div>
