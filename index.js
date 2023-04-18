@@ -1,8 +1,7 @@
+
+
 // берем данные кнопки
 const click = document.querySelector('.button'); 
-
-
-
 
 // создаем обработчик событий
 click.addEventListener('click', () => {
@@ -25,16 +24,38 @@ click.addEventListener('click', () => {
         let checkSpam = comment.replace(/viagra/gi, "***").replace(/xxx/gi, "***");
         return checkSpam;
     }     
-    document.querySelector('.avatar').innerHTML = `<img src="${avatar}" width="60" height="60">`; // функция для вывода аватара в чат
+
+        //АВАТАР
+        const avatarArr = [                 //делаю массив из аватарок, которые будут использованы, если юзер не ввел урл
+        "assets/images/avatar1.jpg", 
+        "assets/images/avatar2.png",
+        "assets/images/avatar3.jpg",
+        "assets/images/avatar4.jpg",
+        "assets/images/avatar5.jpg",
+    ];
+                // применяю рандом для выбора аваторки
+    if (avatar === "") {
+        const arrRandomChoice = Math.floor(Math.random() * 5);      // делаю рандом
+        const avatarRandom = avatarArr[arrRandomChoice];
+        avatar = avatarRandom;
+    } else {avatar = avatar;
+        }
+        
     document.querySelector('.username').innerText = userNameChecked; // функция для вывода проверенного юзернейма в чат
     document.querySelector('.message').innerText = commentChecked(); // функция для вывода  сообщения в чат    
+    document.querySelector('.avatar').innerHTML = `<img class="img" src="${avatar}">`;
 
+    
+
+
+
+    //ДАТА
     const messageDate = () => {                                      // пишу функцию для вывода даты
         let date = new Date();                                      // задаю костанту для даты
-        let actualDate = date.toUTCString();                                    
-        document.querySelector('.date').innerText = actualDate;              
+        let actualDate = date.toUTCString();                        // преобразовываю формат даты            
+        document.querySelector('.date').innerText = actualDate;     // записываю дату в див         
     }
-    messageDate();
+    messageDate();                                                  //вызываю функцию даты        
 }
 )
 
