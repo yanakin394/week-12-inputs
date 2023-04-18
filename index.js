@@ -1,19 +1,18 @@
-
-
 // берем данные кнопки
-const click = document.querySelector('.button'); 
+const click = document.querySelector('.button');
 
-// создаем обработчик событий
+//задаю переменные для полученных значений после ввода юзером
+let userName = document.getElementById('name_input').value; 
+let comment = document.getElementById('msg_input').value;
+let avatar = document.getElementById('link_input').value;
+
+// ОБРАБОТЧИК СОБЫТИЙ
 click.addEventListener('click', () => {
 /*     const checkedNoBox = getElementById('checkbox_no');
     checkedNoBox.addEventListener('checked', () => {
         document.querySelector('.username').innerText = 'username';
     }) */
 
-        //задаю переменные для полученных значений после ввода юзером
-    let userName = document.getElementById('name_input').value; 
-    let comment = document.getElementById('msg_input').value;
-    let avatar = document.getElementById('link_input').value;
     
     let userNameLowerRegister = userName.toLowerCase(); // исправляем все буквы юзернейма в нижний регистр
     let userNameFirstLetter = userNameLowerRegister[0].toUpperCase() +  userNameLowerRegister.slice(1); // делаем первый символ заглавной буквой
@@ -25,29 +24,24 @@ click.addEventListener('click', () => {
         return checkSpam;
     }     
 
-        //АВАТАР
-        const avatarArr = [                 //делаю массив из аватарок, которые будут использованы, если юзер не ввел урл
+    //АВАТАР
+    const avatarArr = [                 //делаю массив из аватарок, которые будут использованы, если юзер не ввел урл
         "assets/images/avatar1.jpg", 
         "assets/images/avatar2.png",
         "assets/images/avatar3.jpg",
         "assets/images/avatar4.jpg",
         "assets/images/avatar5.jpg",
-    ];
-                // применяю рандом для выбора аваторки
-    if (avatar === "") {
+    ];                
+    if (avatar === "") {                                            // пишу функцию для рандомного выбора аватарки,если юзер не ввел урл
         const arrRandomChoice = Math.floor(Math.random() * 5);      // делаю рандом
-        const avatarRandom = avatarArr[arrRandomChoice];
+        const avatarRandom = avatarArr[arrRandomChoice];            // применяю рандом для выбора аваторки
         avatar = avatarRandom;
     } else {avatar = avatar;
         }
-        
+    // ОТОБРАЖЕНИЕ ЭЛЕМЕНТОВ В ЧАТЕ
     document.querySelector('.username').innerText = userNameChecked; // функция для вывода проверенного юзернейма в чат
     document.querySelector('.message').innerText = commentChecked(); // функция для вывода  сообщения в чат    
     document.querySelector('.avatar').innerHTML = `<img class="img" src="${avatar}">`;
-
-    
-
-
 
     //ДАТА
     const messageDate = () => {                                      // пишу функцию для вывода даты
