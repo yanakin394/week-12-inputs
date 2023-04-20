@@ -58,8 +58,9 @@ click.addEventListener('click', () => {
     //ДАТА
     const messageDate = () => {                                     // пишу функцию для вывода даты
         let date = new Date();                                      // задаю костанту для даты
-        let actualDate = date.toUTCString();                        // преобразовываю формат даты            
-        document.querySelector('.date').innerText = actualDate;     // записываю дату в див         
+        let actualDate = date.toUTCString();                        // преобразовываю формат даты   
+        let data = actualDate.slice(0, 25);
+        document.querySelector('.date').innerText = data;     // записываю дату в див         
     }
     messageDate();                                                  //вызываю функцию даты        
 }
