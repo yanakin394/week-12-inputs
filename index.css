@@ -30,7 +30,13 @@
     padding-left: 2%;
 }
 .message {
+
     padding-top: 3%;
+}
+.message__wrapper{
+    border-bottom: 1px dashed grey;
+    padding-top: 2%;
+    padding-bottom: 3%;
 }
 .chat_title,
 .input_title {

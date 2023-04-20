@@ -51,16 +51,16 @@ click.addEventListener('click', () => {
 
 
     // ОТОБРАЖЕНИЕ ЭЛЕМЕНТОВ В ЧАТЕ
-    document.querySelector('.username').innerText = nameSurname;                                // вывод проверенного юзернейма в чат
-    document.querySelector('.message').innerText = commentChecked();                            // вывод  сообщения в чат    
+    document.querySelector('.username').innerText = nameSurname;                                           // вывод проверенного юзернейма в чат
+    document.querySelector('.message').innerHTML = `<p class="message__wrapper">${commentChecked()}</p>`;  // вывод  сообщения в чат   
     document.querySelector('.avatar').innerHTML = `<img class="img" src="${avatar}">`;          //вывод  аватарки в чат   
 
     //ДАТА
     const messageDate = () => {                                     // пишу функцию для вывода даты
         let date = new Date();                                      // задаю костанту для даты
         let actualDate = date.toUTCString();                        // преобразовываю формат даты   
-        let data = actualDate.slice(0, 25);
-        document.querySelector('.date').innerText = data;     // записываю дату в див         
+        let dateNoGMT = actualDate.slice(0, 25);
+        document.querySelector('.date').innerText = dateNoGMT;           // записываю дату в див         
     }
     messageDate();                                                  //вызываю функцию даты        
 }
