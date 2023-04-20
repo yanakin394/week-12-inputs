@@ -13,18 +13,29 @@ click.addEventListener('click', () => {
     let comment = document.getElementById('msg_input').value;
     let avatar = document.getElementById('link_input').value;
     
-    let userNameLowerRegister = userName.toLowerCase(); // исправляем все буквы юзернейма в нижний регистр
-    let userNameFirstLetter = userNameLowerRegister[0].toUpperCase() +  userNameLowerRegister.slice(1); // делаем первый символ заглавной буквой
-    let userNameChecked = userNameFirstLetter.trim(); // проверяем на пробелы
+    let userNameArr = userName.split(' ');                                                                      //делаю из юзернейма массив
+    
+    let nameExtracted = userNameArr[0];                                                                         //беру элемент ИМЯ из массива
+    let nameLowerRegister = nameExtracted.toLowerCase();                                                        // перевожу ИМЯ в нижний регистр
+    let nameFirstLetter = nameLowerRegister[0].toUpperCase() + nameLowerRegister.slice(1);                      // делаем первый символ заглавной буквой
+    let nameChecked =  nameFirstLetter.trim();                                                                  // проверяем на пробелы
 
-    //ПРОВЕРКА НА СПАМ
+    let surnameExtracted = userNameArr[1];                                                                      //беру элемент ФАМИЛИЯ из массива
+    let surnameLowerRegister = surnameExtracted.toLowerCase();                                                  // перевожу ФАМИЛИЮ в нижний регистр
+    let surnameFirstLetter = surnameLowerRegister[0].toUpperCase() + surnameLowerRegister.slice(1);             // делаем первый символ заглавной буквой
+    let surnameChecked =  surnameFirstLetter.trim();    
+
+    let nameSurname = nameChecked + ' ' + surnameChecked;
+
+
+    //ПРОВЕРКА СООБЩЕНИЯ НА СПАМ
     let commentChecked = () => {
         let checkSpam = comment.replace(/viagra/gi, "***").replace(/xxx/gi, "***");
         return checkSpam;
     }     
 
     //АВАТАР
-    const avatarArr = [                 //делаю массив из аватарок, которые будут использованы, если юзер не ввел урл
+    const avatarArr = [                                             //делаю массив из аватарок, которые будут использованы, если юзер не ввел урл
         "assets/images/avatar1.jpg", 
         "assets/images/avatar2.png",
         "assets/images/avatar3.jpg",
@@ -40,12 +51,12 @@ click.addEventListener('click', () => {
 
 
     // ОТОБРАЖЕНИЕ ЭЛЕМЕНТОВ В ЧАТЕ
-    document.querySelector('.username').innerText = userNameChecked; // вывод проверенного юзернейма в чат
-    document.querySelector('.message').innerText = commentChecked(); // вывод  сообщения в чат    
-    document.querySelector('.avatar').innerHTML = `<img class="img" src="${avatar}">`; //вывод  аватарки в чат   
+    document.querySelector('.username').innerText = nameSurname;                                // вывод проверенного юзернейма в чат
+    document.querySelector('.message').innerText = commentChecked();                            // вывод  сообщения в чат    
+    document.querySelector('.avatar').innerHTML = `<img class="img" src="${avatar}">`;          //вывод  аватарки в чат   
 
     //ДАТА
-    const messageDate = () => {                                      // пишу функцию для вывода даты
+    const messageDate = () => {                                     // пишу функцию для вывода даты
         let date = new Date();                                      // задаю костанту для даты
         let actualDate = date.toUTCString();                        // преобразовываю формат даты            
         document.querySelector('.date').innerText = actualDate;     // записываю дату в див         
